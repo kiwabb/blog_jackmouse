@@ -1,0 +1,18 @@
+server:
+  port: 9001
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&&characterEncoding=utf-8&&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    password: root
+    username: root
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  mapper-locations: classpath:com/jackmouse/blog/mapper/xml/*.xml
+  type-aliases-package: com.jackmouse.blog.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
